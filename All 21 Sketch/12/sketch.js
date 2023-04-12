@@ -3,7 +3,6 @@ let theShader;
 let yoff = -140
 
 function preload() {
-    // load the shader
     theShader = loadShader('color.vert', 'color.frag');
 }
 

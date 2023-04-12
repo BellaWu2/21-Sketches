@@ -13,7 +13,7 @@ const bgData = Array.from(new Array(500)).map(v => {
 })
 const sendText = (text, fontSize = ((width * 0.7) / text.length), stepV = 40) => {
     ctx.font = `bold ${500}px Times`
-    ctx.fillStyle = '#ff69b4'
+    ctx.fillStyle = '#000000'
     ctx.fillRect(0, 0, width, height)
     ctx.fillStyle = '#ffffff'
     ctx.textAlign = 'center'
