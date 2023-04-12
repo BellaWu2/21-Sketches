@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>Document</title>
+</head>
+<style>
+    @import url("http://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700,800,900&display=swap");
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        display: flex;
+        background: #2d96ff;
+        overflow: hidden;
+    }
+    
+    .container {
+        position: relative;
+        width: 1000px;
+        height: 1000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Work Sans";
+        font-size: 500px;
+        font-weight: 900;
+    }
+    
+    #right {
+        flex: 1;
+        background-color: #fff;
+    }
+    
+    .text {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        color: #ff98e9;
+        cursor: pointer;
+        transition: color 0.35s ease;
+    }
+    
+    .hover-text {
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ff0000;
+        width: 100%;
+        pointer-events: none;
+        clip-path: circle(75px at var(--x) var(--y));
+        opacity: 0;
+        transition: opacity 0.25s ease;
+    }
+    
+    .img-con {
+        position: absolute;
+        z-index: -2;
+        top: -75px;
+        left: -75px;
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+    }
+    
+    .hover-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+        filter: brightness(0.9);
+    }
+    
+    .text:hover {
+        color: #0d00ff;
+    }
+    
+    .text:hover~.hover-text {
+        opacity: 1;
+    }
+    
+    .text:hover~.img-con {
+        opacity: 1;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="text">H</div>
+        <div class="hover-text">H</div>
+        <div class="img-con">
+            <img class="hover-img" src="18.jpg" alt="">
+        </div>
+    </div>
+    <div id="right"></div>
+    <script src="sketch.js"></script>
+</body>
+
+</html>
